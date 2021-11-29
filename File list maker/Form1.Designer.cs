@@ -95,6 +95,7 @@ namespace File_list_maker
             this.colSize.AspectName = "Size";
             this.colSize.IsEditable = false;
             this.colSize.Text = "Размер";
+            this.colSize.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.colSize.Width = 130;
             // 
             // colType

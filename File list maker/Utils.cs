@@ -137,7 +137,7 @@ namespace File_list_maker
             long tb = n / TB;
 
             if (n >= 0 && n < KB)
-                return string.Format("{0} b", b);
+                return string.Format("{0} B", b);
             if (n >= KB && n < MB)
                 return string.Format("{0},{1:D3} KB", kb, b);
             if (n >= MB && n < GB)
