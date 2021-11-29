@@ -93,6 +93,11 @@ namespace File_list_maker
 
         public static MainConfiguration config;
 
+        public static string DateTimeToString(DateTime dateTime)
+        {
+            return dateTime > DateTime.MinValue ? dateTime.ToString("dd.MM.yyyy HH:mm:ss") : "N / A";
+        }
+
         public static string AttributesToString(FileAttributes attributes)
         {
             string str = string.Empty;

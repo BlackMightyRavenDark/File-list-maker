@@ -62,24 +62,17 @@ namespace File_list_maker
             colType.AspectToStringConverter = val =>
             {
                 ListItemType itemType = (ListItemType)val;
-                string res;
                 switch (itemType)
                 {
                     case ListItemType.Disk:
-                        res = "Диск";
-                        break;
+                        return "Диск";
                     case ListItemType.Directory:
-                        res = "Папка";
-                        break;
+                        return "Папка";
                     case ListItemType.File:
-                        res = "Файл";
-                        break;
+                        return "Файл";
                     default:
-                        res = "N / A";
-                        break;
-
+                        return "N / A";
                 }
-                return res;
             };
             colAttributes.AspectToStringConverter = val =>
             {
@@ -87,23 +80,22 @@ namespace File_list_maker
                 {
                     return "N / A";
                 }
-                string attrs = (string)val;
-                return attrs;
+                return (string)val;
             };
             colCreationDate.AspectToStringConverter = val =>
             {
                 DateTime dt = (DateTime)val;
-                return dt > DateTime.MinValue ? dt.ToString("dd.MM.yyyy HH:mm:ss") : "N / A";
+                return DateTimeToString(dt);
             };
             colModificationDate.AspectToStringConverter = val =>
             {
                 DateTime dt = (DateTime)val;
-                return dt > DateTime.MinValue ? dt.ToString("dd.MM.yyyy HH:mm:ss") : "N / A";
+                return DateTimeToString(dt);
             };
             colLastAccessDate.AspectToStringConverter = val =>
             {
                 DateTime dt = (DateTime)val;
-                return dt > DateTime.MinValue ? dt.ToString("dd.MM.yyyy HH:mm:ss") : "N / A";
+                return DateTimeToString(dt);
             };
         }
 
