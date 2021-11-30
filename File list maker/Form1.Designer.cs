@@ -82,6 +82,7 @@ namespace File_list_maker
             this.treeListView1.UseCompatibleStateImageBehavior = false;
             this.treeListView1.View = System.Windows.Forms.View.Details;
             this.treeListView1.VirtualMode = true;
+            this.treeListView1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.treeListView1_MouseDoubleClick);
             // 
             // colName
             // 

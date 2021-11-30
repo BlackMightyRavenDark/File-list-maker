@@ -99,6 +99,25 @@ namespace File_list_maker
             };
         }
 
+        private void treeListView1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ListItem item = (ListItem)treeListView1.SelectedObject;
+                if (item != null && item.ItemType != ListItemType.File)
+                {
+                    if (treeListView1.IsExpanded(item))
+                    {
+                        treeListView1.Collapse(item);
+                    }
+                    else
+                    {
+                        treeListView1.Expand(item);
+                    }
+                }
+            }
+        }
+
         private void btnOpenList_Click(object sender, EventArgs e)
         {
             DisableControls();
@@ -445,5 +464,6 @@ namespace File_list_maker
             btnSaveList.Enabled = true;
             btnClearList.Enabled = true;
         }
+
     }
 }
