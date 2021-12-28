@@ -234,6 +234,8 @@ namespace File_list_maker
                 root.DisplayName = $"{nodeName} {label} [{FormatSize(free)} / {FormatSize(size)}]";
                 root.Size = size;
                 root.DiskInfo.FreeSpace = free;
+                root.DiskInfo.Label = label;
+
                 JArray jArr = j.Value<JArray>("subItems");
                 foreach (JObject j2 in jArr)
                 {
